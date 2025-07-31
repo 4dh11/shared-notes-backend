@@ -1,0 +1,82 @@
+### Enable app lock + set password
+PUT http://localhost:5001/api/settings
+Content-Type: application/json
+
+{
+  "theme": "dark",
+  "isLocked": true,
+  "password": "pwd123"
+}
+
+### Login to get JWT token
+POST http://localhost:5001/api/auth/login
+Content-Type: application/json
+
+{
+  "password": "pwd123"
+}
+
+### Get all notes (replace with your token below)
+GET http://localhost:5001/api/notes
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2Nlc3MiOiJzaGFyZWRfbm90ZXNfdXNlciIsImlhdCI6MTc1Mzc4MTE0NCwiZXhwIjoxNzUzNzg0NzQ0fQ.KHHvUbcQFiK0lF1WKhE5d_9V-ylTwt7Ch28icm3tepE
+
+### Search for notes that include "test" in title or content
+GET http://localhost:5001/api/notes?q=almost
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2Nlc3MiOiJzaGFyZWRfbm90ZXNfdXNlciIsImlhdCI6MTc1Mzc4MTE0NCwiZXhwIjoxNzUzNzg0NzQ0fQ.KHHvUbcQFiK0lF1WKhE5d_9V-ylTwt7Ch28icm3tepE
+
+
+### Create a new note
+POST http://localhost:5001/api/notes
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2Nlc3MiOiJzaGFyZWRfbm90ZXNfdXNlciIsImlhdCI6MTc1Mzc4MTE0NCwiZXhwIjoxNzUzNzg0NzQ0fQ.KHHvUbcQFiK0lF1WKhE5d_9V-ylTwt7Ch28icm3tepE
+Content-Type: application/json
+
+{
+  "title": "Test Note",
+  "content": "This is a test note created after login"
+}
+
+### Create a pinned note
+POST http://localhost:5001/api/notes
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2Nlc3MiOiJzaGFyZWRfbm90ZXNfdXNlciIsImlhdCI6MTc1Mzc4MTE0NCwiZXhwIjoxNzUzNzg0NzQ0fQ.KHHvUbcQFiK0lF1WKhE5d_9V-ylTwt7Ch28icm3tepE
+Content-Type: application/json
+
+{
+  "title": "Important2!",
+  "content": "This is a pinned note",
+  "pinned": true
+}
+
+### Get pinned notes
+GET http://localhost:5001/api/notes/pinned
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2Nlc3MiOiJzaGFyZWRfbm90ZXNfdXNlciIsImlhdCI6MTc1Mzc4MTE0NCwiZXhwIjoxNzUzNzg0NzQ0fQ.KHHvUbcQFiK0lF1WKhE5d_9V-ylTwt7Ch28icm3tepE
+
+
+### Update a note (replace NOTE_ID_HERE and JWT)
+PUT http://localhost:5001/api/notes/6887707e86d3d149b5fff4fa
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2Nlc3MiOiJzaGFyZWRfbm90ZXNfdXNlciIsImlhdCI6MTc1Mzc0Njc0OCwiZXhwIjoxNzUzNzUwMzQ4fQ.Yu92hnqPkgtZ_ogeGW04ggfS-gbhOWML6HF5AxTGgZM
+Content-Type: application/json
+
+{
+  "title": "Updated Note Title",
+  "content": "Updated content here",
+  "pinned": true
+}
+
+### Delete a note (replace NOTE_ID_HERE and JWT)
+DELETE http://localhost:5001/api/notes/68881340cea373eabb7567ac
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2Nlc3MiOiJzaGFyZWRfbm90ZXNfdXNlciIsImlhdCI6MTc1Mzc0Njc0OCwiZXhwIjoxNzUzNzUwMzQ4fQ.Yu92hnqPkgtZ_ogeGW04ggfS-gbhOWML6HF5AxTGgZM
+
+### Add preset wallpapers manually
+PUT http://localhost:5001/api/settings
+Content-Type: application/json
+
+{
+  "wallpaperPresets": [
+    "/uploads/wallpapers/eat cat.jpg",
+    "/uploads/wallpapers/sleep cat.jpg",
+    "/uploads/wallpapers/tuxedo and orange.jpg"
+  ]
+}
+
+### Get all preset wallpapers
+GET http://localhost:5001/api/settings/wallpapers

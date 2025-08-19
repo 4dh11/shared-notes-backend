@@ -588,6 +588,6 @@ If you encounter any issues or have questions:
 
 ⭐ **Star this repository if you find it helpful!**
 
-🔗 **Frontend Repository:** [Add your frontend repo link here]
+🔗 **Frontend Repository:** [[shared-notes-frontend](https://github.com/4dh11/shared-notes-frontend)]
 
 Made with ❤️ by [4dh11](https://github.com/4dh11)

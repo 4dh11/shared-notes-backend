@@ -564,7 +564,7 @@ This project is licensed under the ISC License.
 **SS Adityaa** - [4dh11](https://github.com/4dh11)
 
 - GitHub: [@4dh11](https://github.com/4dh11)
-- LinkedIn: [Your LinkedIn]
+- LinkedIn: [Adityaa SS](https://www.linkedin.com/in/adityaa-ss-30233b2b3/)
 - Email: adityaa.sureshbabu@gmail.com
 
 ## 🙏 Acknowledgments

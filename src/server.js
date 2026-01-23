@@ -16,6 +16,11 @@ const PORT = process.env.PORT || 5001
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
 
+// This tells your server to respond with "pong" when it hears "ping"
+app.get('/ping', (req, res) => {
+  res.status(200).send('pong');
+});
+
 connectDB()
 
 // Configure CORS middleware
@@ -51,8 +56,3 @@ app.use("/uploads", express.static(path.join(__dirname, "../uploads")))
 app.listen(PORT, () => {
   console.log("Server started on PORT:", PORT)
 })
-
-// This tells your server to respond with "pong" when it hears "ping"
-app.get('/ping', (req, res) => {
-  res.status(200).send('pong');
-});
